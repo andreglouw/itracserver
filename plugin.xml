@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         id="com.ikno.itracclient.application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.ikno.itracclient.startup.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Client View"
+            class="com.ikno.itracclient.startup.Perspective"
+            id="com.ikno.itracclient.perspective">
+      </perspective>
+      <perspective
+            class="com.ikno.itracclient.startup.LightPerspective"
+            id="com.ikno.itracclient.lightperspective"
+            name="Light View">
+      </perspective>
+      <perspective
+            class="com.ikno.itracclient.startup.GroupPerspective"
+            id="com.ikno.itracclient.groupperspective"
+            name="Control Room Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.ikno.itracclient.views.AssetView"
+            id="com.ikno.itracclient.views.AssetView"
+            name="Assets">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.StatusSummaryView"
+            id="com.ikno.itracclient.views.StatusSummaryView"
+            name="Status Summary">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.InfoBarView"
+            id="com.ikno.itracclient.views.InfoBarView"
+            name="InfoBarView">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.AssetIncidentView"
+            id="com.ikno.itracclient.views.AssetIncidentView"
+            name="Asset Status">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.UnitIncidentView"
+            id="com.ikno.itracclient.views.UnitIncidentView"
+            name="Unit Status">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.IncidentSummaryView"
+            id="com.ikno.itracclient.views.IncidentSummaryView"
+            name="History">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.ikno.itracclient.views.ConsoleView"
+            id="com.ikno.itracclient.views.ConsoleView"
+            name="Console">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.ikno.itracclient.worldwind.ActiveWorldWindView"
+            id="com.ikno.itracclient.worldwind.ActiveWorldWindView"
+            name="World Wind Map">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.ReportViewer"
+            id="com.ikno.itracclient.views.ReportViewer"
+            name="Report Viewer">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.ReportRequestView"
+            id="com.ikno.itracclient.views.ReportRequestView"
+            name="Report Request">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.RuleView"
+            id="com.ikno.itracclient.views.RuleView"
+            name="Rules">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.RuleAssignmentView"
+            id="com.ikno.itracclient.views.RuleAssignmentView"
+            name="Asset Rules">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.AssetStatusView"
+            id="com.ikno.itracclient.views.AssetStatusView"
+            name="Asset">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.IncidentView"
+            id="com.ikno.itracclient.views.IncidentView"
+            name="Incidents">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.MailboxView"
+            id="com.ikno.itracclient.views.MailboxView"
+            name="Mail Box">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.NewMailBox"
+            id="com.ikno.itracclient.views.NewMailBox"
+            name="New ViewPart">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.ikno.itracclient.googleearth.GoogleEarth"
+            id="com.ikno.itracclient.googleearth.GoogleEarth"
+            name="Google Earth">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.BrowserView"
+            id="com.ikno.itracclient.views.BrowserView"
+            name="Browser">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.ExcelDataView"
+            id="com.ikno.itracclient.views.ExcelDataView"
+            name="Import From Excel">
+      </view>
+      <view
+            class="com.ikno.itracclient.views.ReportBatchView"
+            id="com.ikno.itracclient.views.ReportBatchView"
+            name="Requested Reports">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.ikno.itracclient.falconview.FalconView"
+            id="com.ikno.itracclient.falconview.FalconView"
+            name="Falcon View">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="com.ikno.itracclient.properties.AssetPropertyPage"
+            id="com.ikno.itracclient.properties.AssetPropertyPage"
+            name="Asset">
+         <enabledWhen>
+            <instanceof
+                  value="com.ikno.dao.business.Asset$AssetWrapper">
+            </instanceof>
+         </enabledWhen>
+      </page>
+      <page
+            class="com.ikno.itracclient.properties.UnitPropertyPage"
+            id="com.ikno.itracclient.properties.UnitPropertyPage"
+            name="Unit">
+         <enabledWhen>
+            <instanceof
+                  value="com.ikno.dao.business.Unit">
+            </instanceof>
+         </enabledWhen>
+      </page>
+      <page
+            class="com.ikno.itracclient.properties.UserPropertyPage"
+            id="com.ikno.itracclient.properties.UserPropertyPage"
+            name="User">
+         <enabledWhen>
+            <instanceof
+                  value="com.ikno.dao.business.User">
+            </instanceof>
+         </enabledWhen>
+      </page>
+      <page
+            class="com.ikno.itracclient.properties.FactionPropertyPage"
+            id="com.ikno.itracclient.properties.FactionPropertyPage"
+            name="Asset Group">
+         <enabledWhen>
+            <instanceof
+                  value="com.ikno.dao.business.Faction$FactionWrapper">
+            </instanceof>
+         </enabledWhen>
+      </page>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.ikno.itracclient.application"
+            name="iTrac Client">
+         <property
+               name="appName"
+               value="iTrac Client">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

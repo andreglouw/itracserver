@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="iTrac Client" uid="com.ikno.itracclient.product" id="com.ikno.itracclient.product" application="com.ikno.itracclient.application" version="4.2" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgs>-Xms128m -Xmx512m
+-Dcom.ikno.dao.provider=local
+-Dcom.ikno.longsessions=true
+-Dcom.ikno.topicsubscriber=true
+-Dcom.ikno.hibernate.use_second_level_cache=false
+-Dcom.ikno.hibernate.use_query_cache=false
+-Dcom.ikno.config.default=c:/itrac/config.default
+-Dcom.ikno.config.layers=c:/itrac/layers.xml
+-Dnet.sf.ehcache.enableShutdownHook=true
+-Dcom.ikno.config.mapping=GoogleEarth
+-Djava.naming.provider.url=jnp://www.i-see.co.za:1099 
+-Dcom.ikno.imageurl=http://www.i-see.co.za/images 
+-Dcom.ikno.hibernate.connection.url=jdbc:postgresql://www.i-see.co.za:5432/Tracking -Dcom.ikno.mapping.googleurl=http://www.i-see.co.za/itrac/index.html
+-Dcom.ikno.mailboxactive=true</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <splash
+      location="com.ikno.itracclient" />
+   <launcher name="itrac">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+      <windows>org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</windows>
+   </vm>
+
+   <plugins>
+      <plugin id="com.genuitec.javascript.debug.mozilla" fragment="true"/>
+      <plugin id="com.ibm.icu"/>
+      <plugin id="com.ikno.dao"/>
+      <plugin id="com.ikno.itracclient"/>
+      <plugin id="gov.nasa.worldwind.0.5.0"/>
+      <plugin id="javax.media.opengl.0.5.0"/>
+      <plugin id="javax.servlet"/>
+      <plugin id="jre.system.library"/>
+      <plugin id="org.eclipse.ant.core"/>
+      <plugin id="org.eclipse.core.commands"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.filesystem"/>
+      <plugin id="org.eclipse.core.filesystem.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.net"/>
+      <plugin id="org.eclipse.core.resources"/>
+      <plugin id="org.eclipse.core.resources.compatibility" fragment="true"/>
+      <plugin id="org.eclipse.core.resources.win32" fragment="true"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.core.variables"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.jface"/>
+      <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.jface.text"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.services"/>
+      <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.text"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.forms"/>
+      <plugin id="org.eclipse.ui.ide"/>
+      <plugin id="org.eclipse.ui.views"/>
+      <plugin id="org.eclipse.ui.win32" fragment="true"/>
+      <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.eclipse.ui.workbench.texteditor"/>
+      <plugin id="org.eclipse.update.configurator"/>
+      <plugin id="org.eclipse.update.core"/>
+      <plugin id="org.eclipse.update.core.win32" fragment="true"/>
+      <plugin id="org.eclipse.update.ui"/>
+      <plugin id="org.jpedal"/>
+      <plugin id="org.mozilla.xpcom"/>
+   </plugins>
+
+   <features>
+      <feature id="com.ikno.feature" version="4.2.1"/>
+   </features>
+
+
+</product>

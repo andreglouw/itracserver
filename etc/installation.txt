@@ -1,0 +1,2 @@
+1) The plugin's Manifest references itrac.jar and com.ikno.dao.jar using system property 
+com.ikno.dao.externaljars=some/path/containing/these/jars. Specify this on the commandline when starting the app. 
